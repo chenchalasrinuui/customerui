@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css'
+import './animations.css'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client'
@@ -10,7 +11,7 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 
 const apolloClient = new ApolloClient({
-  uri: 'http://localhost:2020/graphql',
+  uri: process.env.REACT_APP_GQ_BASE_URL,
   cache: new InMemoryCache()
 
 })

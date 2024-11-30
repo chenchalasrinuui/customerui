@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import config from './config.json'
 import { Input } from '../../../components/shared/Input'
 import { handleFieldLevelValidation, handleFormLevelValidation, clearFormData } from '../../../services/validations'
@@ -9,6 +9,9 @@ export const Register = () => {
     const [inputControls, setInputControls] = useState(config)
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        clearFormData(inputControls, setInputControls)
+    }, [])
     const handleToaster = (msg, clr) => {
         dispatch({
             type: 'TOASTER',
