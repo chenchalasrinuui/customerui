@@ -1,0 +1,28 @@
+.toaster {
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-weight: bold;
+    width: 300px;
+    text-align: center;
+}
+
+.toaster>div:first-child {
+    width: 250px;
+    display: inline-block;
+}
+
+.toaster>div:last-child {
+    height: 2px;
+    background-color: white;
+    margin-top: 5px;
+}
+
+.toaster>b {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+}

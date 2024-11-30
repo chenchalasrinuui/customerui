@@ -1,0 +1,36 @@
+[
+    {
+        "lbl": "Email",
+        "lblCols": "5",
+        "name": "email",
+        "type": "text",
+        "errMsgCols": "4",
+        "isRequired": true,
+        "errorMsg": "",
+        "hasError": false,
+        "value": "",
+        "inputCols": "3",
+        "placeholder": "Email",
+        "criteria": [
+            "REQUIRED",
+            "EMAIL"
+        ]
+    },
+    {
+        "lbl": "Phone",
+        "lblCols": "5",
+        "name": "phone",
+        "type": "number",
+        "errMsgCols": "4",
+        "isRequired": true,
+        "errorMsg": "",
+        "hasError": false,
+        "value": "",
+        "inputCols": "3",
+        "placeholder": "phone",
+        "criteria": [
+            "REQUIRED",
+            "PHONE"
+        ]
+    }
+]
