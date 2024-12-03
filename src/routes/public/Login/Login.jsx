@@ -2,12 +2,20 @@ import React, { useState } from 'react'
 import config from './config.json'
 import { Input } from '../../../components/shared/Input'
 import { handleFieldLevelValidation, handleFormLevelValidation } from '../../../services/validations'
+import Ajax from '../../../services/ajax'
+
 export const Login = () => {
     const [inputControls, setInputControls] = useState(config)
     const fnLogin = async () => {
-        const [isInValid, dataObj] = await handleFormLevelValidation(inputControls, setInputControls)
-        if (isInValid) return;
+        try {
+            const [isInValid, dataObj] = await handleFormLevelValidation(inputControls, setInputControls)
+            if (isInValid) return;
+            const res = await Ajax.post('users/login', dataObj)
+        } catch (ex) {
 
+        } finally {
+
+        }
     }
     const handleChange = async (eve) => {
         await handleFieldLevelValidation(eve, inputControls, setInputControls)

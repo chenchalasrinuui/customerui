@@ -23,6 +23,10 @@ const regEx = {
     },
     "IMGMAXSIZE5KB": {
         message: "Size is <6kb , widht <250 , height<250"
+    },
+    "EMAIL/PHONE": {
+        pattern: [/^[a-zA-Z]{1}[a-zA-Z0-9_./]*@[a-zA-Z]{3,10}\.[a-zA-Z]{2,3}$/, /^[0-9]{10}$/],
+        message: "Please Check your input"
     }
 }
 
@@ -92,6 +96,13 @@ async function validate(inputObj, inputControls, files) {
                 const { size } = files?.[0]
                 const [width, height] = await getImgWidthAndHeight(files[0])
                 if (!(size < 6150 && width < 250 && height < 250)) {
+                    inputObj.errorMsg = message
+                    break outerLoop;
+                }
+                break;
+            case 'EMAIL/PHONE':
+                const isValid = pattern[0].test(inputObj.value) || pattern[1].test(inputObj.value)
+                if (!isValid) {
                     inputObj.errorMsg = message
                     break outerLoop;
                 }
