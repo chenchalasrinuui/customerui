@@ -13,11 +13,13 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 import styles from './AppMenu.module.css'
 import { useNavigate } from "react-router-dom";
-
+import { AppCookies } from '../../../services/cookies';
+import { useDispatch } from 'react-redux';
 export const AppMenu = () => {
     const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
+    const dispatch = useDispatch();
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -28,6 +30,11 @@ export const AppMenu = () => {
         handleClose(); // Close the menu
         navigate(path); // Navigate to the specified path
     };
+    const fnLogout = () => {
+        AppCookies.clear();
+        dispatch({ type: 'LOGIN', payload: false })
+        navigate('/')
+    }
     return (
         <div className={styles.appMenu}>
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
@@ -91,7 +98,7 @@ export const AppMenu = () => {
                 <MenuItem onClick={() => handleNavigation("/address")}>
                     <Avatar /> Address
                 </MenuItem>
-                <MenuItem onClick={() => handleNavigation("/")}>
+                <MenuItem onClick={fnLogout}>
                     <ListItemIcon>
                         <Logout fontSize="small" />
                     </ListItemIcon>

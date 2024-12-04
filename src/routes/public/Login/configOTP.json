@@ -1,0 +1,18 @@
+[
+    {
+        "lbl": "OTP",
+        "lblCols": "5",
+        "name": "otp",
+        "type": "text",
+        "errMsgCols": "4",
+        "isRequired": true,
+        "errorMsg": "",
+        "hasError": false,
+        "value": "",
+        "inputCols": "3",
+        "placeholder": "OTP",
+        "criteria": [
+            "REQUIRED"
+        ]
+    }
+]
