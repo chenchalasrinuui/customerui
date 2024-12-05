@@ -1,0 +1,69 @@
+[
+    {
+        "lbl": "User ID",
+        "lblCols": 12,
+        "name": "uid",
+        "type": "text",
+        "tag": "input",
+        "errMsgCols": 12,
+        "isRequired": true,
+        "errorMsg": "",
+        "hasError": false,
+        "value": "",
+        "inputCols": 12,
+        "criteria": [
+            "REQUIRED",
+            "EMAIL"
+        ]
+    },
+    {
+        "lbl": "Password",
+        "lblCols": 12,
+        "name": "pwd",
+        "tag": "input",
+        "type": "password",
+        "errMsgCols": 12,
+        "errorMsg": "",
+        "isRequired": true,
+        "hasError": false,
+        "value": "",
+        "inputCols": 12,
+        "criteria": [
+            "REQUIRED",
+            "MIN5CHAR"
+        ]
+    },
+    {
+        "lbl": "Phone",
+        "lblCols": 12,
+        "name": "phone",
+        "type": "number",
+        "tag": "input",
+        "errMsgCols": 12,
+        "errorMsg": "",
+        "isRequired": true,
+        "hasError": false,
+        "value": "",
+        "inputCols": 12,
+        "criteria": [
+            "REQUIRED",
+            "PHONE"
+        ]
+    },
+    {
+        "lbl": "Address",
+        "lblCols": 12,
+        "name": "address",
+        "type": "text",
+        "tag": "textarea",
+        "errMsgCols": 12,
+        "errorMsg": "",
+        "isRequired": true,
+        "hasError": false,
+        "value": "",
+        "inputCols": 12,
+        "criteria": [
+            "REQUIRED"
+        ]
+    }
+]

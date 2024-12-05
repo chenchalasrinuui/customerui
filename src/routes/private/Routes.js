@@ -7,7 +7,7 @@ const Address = lazy(() => import("./Address"))
 const Profile = lazy(() => import("./Profile"))
 const Products = lazy(() => import("../public/Products"))
 const ProductInfo = lazy(() => import('../public/ProductInfo'))
-
+const BuyNow = lazy(() => import('./BuyNow'))
 export const privateRoutes = [
     {
         path: '/',
@@ -24,6 +24,10 @@ export const privateRoutes = [
     {
         path: '/orders',
         element: <Orders />
+    },
+    {
+        path: '/buy-now',
+        element: <BuyNow />
     },
     {
         path: '/cart',

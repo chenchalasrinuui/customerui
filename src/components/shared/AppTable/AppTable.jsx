@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import styles from './AppTable.module.css'
 import { Pagination } from './Pagination'
-import Image from 'next/image'
 
 export const AppTable = ({ ths, imgThs, imgTds, data, tds, handleEdit, handleDelete }) => {
     const perPage = 5;
@@ -40,7 +39,7 @@ export const AppTable = ({ ths, imgThs, imgTds, data, tds, handleEdit, handleDel
                                     return <tr id={`tr_${index}`}>
                                         {
                                             imgTds?.map((val, ind) => {
-                                                return <td id={`th_ ${ind}`}><Image src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}${obj[val]}?date=${Date.now()}`} width={100} height={100} /></td>
+                                                return <td id={`th_ ${ind}`}><img src={`${process.env.NEXT_PUBLIC_UPLOAD_URL}${obj[val]}?date=${Date.now()}`} width={100} height={100} /></td>
                                             })
                                         }
                                         {

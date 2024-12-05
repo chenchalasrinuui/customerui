@@ -3,3 +3,30 @@
     right: 0;
     top: 0;
 }
+
+.cart {
+    position: absolute;
+    top: 5px;
+    right: 50px;
+    cursor: pointer;
+}
+
+.cart>img {
+    width: 30px;
+}
+
+.cart>span {
+    font-weight: bold;
+    display: inline-block;
+    background: black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    right: -5px;
+    top: -2px;
+
+}

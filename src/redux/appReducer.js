@@ -27,6 +27,12 @@ export const appReducer = (state = init, action) => {
                 toaster: action.payload
             }
             break;
+        case 'CART':
+            state = {
+                ...state,
+                cartItemsCount: action.payload
+            }
+            break;
     }
     return state;
 }
