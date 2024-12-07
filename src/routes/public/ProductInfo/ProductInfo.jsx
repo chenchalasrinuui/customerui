@@ -104,12 +104,14 @@ export const ProductInfo = () => {
         }
     }
 
+
     const fnBuyNow = () => {
         if (!checkAuth()) {
             navigate('/login');
             return;
         }
-        navigate(`/buy-now?id=${prdouctDetails._id}`)
+        AppCookies.setCookie("checkoutProducts", JSON.stringify([prdouctDetails]))
+        navigate(`/buy-now`)
     }
     return (
         <div className='container-fluid mb-5'>
@@ -124,8 +126,8 @@ export const ProductInfo = () => {
                         <h5>{prdouctDetails?.cost}</h5>
                         <h5>{prdouctDetails?.description}</h5>
                         <div className='col-12 text-center'>
-                            <button onClick={fnAddToCart} className='btn btn-primary me-3'>Add to Cart</button>
-                            <button onClick={fnBuyNow} className='btn btn-primary'>Buy Now</button>
+                            <button onClick={fnAddToCart} className='btn btn-dark me-3'>Add to Cart</button>
+                            <button onClick={fnBuyNow} className='btn btn-dark'>Buy Now</button>
                         </div>
                     </div>
                 </div>

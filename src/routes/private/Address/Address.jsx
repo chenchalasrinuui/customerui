@@ -4,6 +4,7 @@ import Ajax from '../../../services/ajax'
 import { AppForm } from '../../../components/shared/AppForm'
 import { AddressForm } from './AddressForm'
 import { useDispatch } from 'react-redux'
+import { AppCookies } from '../../../services/cookies'
 export const Address = () => {
     const [showForm, setShowForm] = useState(false)
     const [isEdit, setIsEdit] = useState(false)
@@ -18,7 +19,7 @@ export const Address = () => {
     const fnGetAddress = async () => {
         try {
             dispatch({ type: 'LOADER', payload: true })
-            const res = await Ajax.get('address/get-add')
+            const res = await Ajax.get(`address/get?uid=${AppCookies.getCookie('uid')}`)
             setData(res?.data)
         } catch (ex) {
             setData([])
@@ -47,7 +48,7 @@ export const Address = () => {
         try {
             dispatch({ type: 'LOADER', payload: true })
 
-            const res = await Ajax.delete(`address/delete/${id}`)
+            const res = await Ajax.delete(`address/delete?id=${id}`)
             const { acknowledged, deletedCount } = res?.data
             if (acknowledged && deletedCount) {
 
@@ -88,12 +89,12 @@ export const Address = () => {
     return (
         <div>
             <div className='text-end my-2'>
-                <button onClick={fnAddAddress} className='btn btn-primary'>Add Address</button>
+                <button onClick={fnAddAddress} className='btn btn-dark'>Add Address</button>
             </div>
             <AppTable
-                ths={["ID", "UID", "Password", "Phone", "Address"]}
+                ths={["ID", "Name", "Phone", "Hourse no", "Landmark", "PIN CODE"]}
                 data={data}
-                tds={['_id', 'uid', 'pwd', 'phone', 'address']}
+                tds={['_id', 'name', 'phone', 'houseNo', 'landMark', 'pin']}
                 handleEdit={fnEdit}
                 handleDelete={fnDelete}
             />

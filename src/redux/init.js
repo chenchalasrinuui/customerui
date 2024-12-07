@@ -11,6 +11,7 @@ export const init = {
     },
     modal: {
         isShowModal: false,
-        modalAction: () => { }
+        modalAction: () => { },
+        message: ''
     }
 }

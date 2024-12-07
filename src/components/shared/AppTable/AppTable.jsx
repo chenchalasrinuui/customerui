@@ -48,10 +48,10 @@ export const AppTable = ({ ths, imgThs, imgTds, data, tds, handleEdit, handleDel
                                             })
                                         }
                                         <th>
-                                            <button onClick={() => handleEdit(obj)}>Edit</button>
+                                            <button className='btn btn-dark' onClick={() => handleEdit(obj)}>Edit</button>
                                         </th>
                                         <th>
-                                            <button onClick={() => handleDelete(obj)}>Delete</button>
+                                            <button className='btn btn-dark' onClick={() => handleDelete(obj)}>Delete</button>
                                         </th>
                                     </tr>
                                 })
@@ -60,7 +60,7 @@ export const AppTable = ({ ths, imgThs, imgTds, data, tds, handleEdit, handleDel
                     </table>
                 </div>
                 <Pagination currPage={currPage} setCurrPage={setCurrPage} totalPages={Math.ceil(data?.length || 0 / perPage)} />
-            </> : <div className='text-center mt-5'>No data found </div>
+            </> : <h4 className='text-center mt-5'>No data found </h4>
             }
         </div>
     )

@@ -1,8 +1,8 @@
 [
     {
-        "lbl": "User ID",
+        "lbl": "Full Name",
         "lblCols": 12,
-        "name": "uid",
+        "name": "name",
         "type": "text",
         "tag": "input",
         "errMsgCols": 12,
@@ -12,33 +12,15 @@
         "value": "",
         "inputCols": 12,
         "criteria": [
-            "REQUIRED",
-            "EMAIL"
-        ]
-    },
-    {
-        "lbl": "Password",
-        "lblCols": 12,
-        "name": "pwd",
-        "tag": "input",
-        "type": "password",
-        "errMsgCols": 12,
-        "errorMsg": "",
-        "isRequired": true,
-        "hasError": false,
-        "value": "",
-        "inputCols": 12,
-        "criteria": [
-            "REQUIRED",
-            "MIN5CHAR"
+            "REQUIRED"
         ]
     },
     {
         "lbl": "Phone",
         "lblCols": 12,
         "name": "phone",
-        "type": "number",
         "tag": "input",
+        "type": "number",
         "errMsgCols": 12,
         "errorMsg": "",
         "isRequired": true,
@@ -51,11 +33,43 @@
         ]
     },
     {
-        "lbl": "Address",
+        "lbl": "House No",
         "lblCols": 12,
-        "name": "address",
+        "name": "houseNo",
+        "type": "number",
+        "tag": "input",
+        "errMsgCols": 12,
+        "errorMsg": "",
+        "isRequired": true,
+        "hasError": false,
+        "value": "",
+        "inputCols": 12,
+        "criteria": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "lbl": "Landmark",
+        "lblCols": 12,
+        "name": "landMark",
         "type": "text",
-        "tag": "textarea",
+        "tag": "input",
+        "errMsgCols": 12,
+        "errorMsg": "",
+        "isRequired": true,
+        "hasError": false,
+        "value": "",
+        "inputCols": 12,
+        "criteria": [
+            "REQUIRED"
+        ]
+    },
+    {
+        "lbl": "Pincode",
+        "lblCols": 12,
+        "name": "pin",
+        "type": "number",
+        "tag": "input",
         "errMsgCols": 12,
         "errorMsg": "",
         "isRequired": true,
